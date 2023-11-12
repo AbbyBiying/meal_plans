@@ -1,6 +1,8 @@
 require_relative "boot"
 
 require "rails/all"
+require 'dotenv/rails-now'
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -28,5 +30,13 @@ module TaskSync
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    # Load environment variables from .env file
+    Dotenv::Railtie.load
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'  # Update this with the appropriate origin
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
   end
 end

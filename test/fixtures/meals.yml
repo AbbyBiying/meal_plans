@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  preferences: MyString
+  goal: MyString
+  allergies: MyString
+  amount: 1
+  cuisines: MyString
+
+two:
+  preferences: MyString
+  goal: MyString
+  allergies: MyString
+  amount: 1
+  cuisines: MyString
