@@ -7,4 +7,4 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-MealPlan.create(name: "Abby's meal plan", preferences: 'healthy', goals: 'lose weight',allergies:'none',cuisines:'Chinese',amounts:'3')
+MealPlan.create(name: "Abby's meal plan", preferences: 'healthy', goals: 'lose weight', allergies:'none', cuisines:'Chinese', amounts:'3')

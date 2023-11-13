@@ -1,16 +1,5 @@
 class MealPlansController < ApplicationController
-  before_action :set_meal_plan, only: %i[ show update destroy ]
-  
-  def generate_plan
-    chatgpt_service = ChatGPTService.new()
-    
-    user_input = params[:user_input]  # You need to adapt this based on how user input is sent in your app
-    response = chatgpt_service.generate_response(user_input)
-
-    render json: { meal_plan: response }
-
-    
-  end
+  before_action :set_meal_plan, only: %i[show update destroy]
 
   # GET /meal_plans
   def index
@@ -57,6 +46,8 @@ class MealPlansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meal_plan_params
-      params.require(:meal_plan).permit(:name, :description)
+      params.require(:meal_plan).permit(:name, :preferences, :goals, :allergies, :cuisines, :amounts)
     end
+    
+  
 end

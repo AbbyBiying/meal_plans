@@ -13,11 +13,12 @@ class ChatGPTService
         "Authorization" => "Bearer #{OPENAI_API_KEY}",
         "Content-Type" => "application/json"
       },
-      body: { messages: [{ role: "system", content: "You are a helpful assistant." }, { role: "user", content: prompt }] }.to_json
+      
+      body: { model: "gpt-3.5-turbo-instruct", messages: [{ role: "system", content: "You are a helpful assistant." }, { role: "user", content: prompt }] }.to_json
     )
-
+    puts response
     JSON.parse(response.body)["choices"][0]["message"]["content"]
-  rescue error
+  rescue => error
     @errors.push(error)
   end
 end
