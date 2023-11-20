@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
     if @user.save
       token = JwtService.encode(user_id: @user.id)
+      puts token
       render json: { user: @user, token: token }, status: :created
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
