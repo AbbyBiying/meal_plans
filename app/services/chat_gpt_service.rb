@@ -14,7 +14,7 @@ class ChatGPTService
         "Content-Type" => "application/json"
       },
       
-      body: { model: "gpt-3.5-turbo-instruct", messages: [{ role: "system", content: "You are a helpful assistant." }, { role: "user", content: prompt }] }.to_json
+      body: { model: "gpt-3.5-turbo", messages: [{ role: "system", content: "You are a helpful assistant." }, { role: "user", content: prompt }] }.to_json
     )
     puts response
     JSON.parse(response.body)["choices"][0]["message"]["content"]

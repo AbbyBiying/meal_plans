@@ -3,6 +3,8 @@ source "https://rubygems.org"
 ruby "3.1.2"
 gem 'dotenv-rails'
 gem 'httparty'
+gem 'jwt'
+
 gem 'rack-cors'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

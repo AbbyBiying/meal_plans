@@ -6,8 +6,7 @@ class GetResponseJob < ApplicationJob
 
     chatgpt_service = ChatGPTService.new
     user_input = "user name is #{meal_plan.name}, preferences is #{meal_plan.preferences}, goals is #{meal_plan.goals}, allergies is #{meal_plan.allergies}, cuisines is#{meal_plan.cuisines}, amounts is #{meal_plan.amounts}"
-    # self.response = chatgpt_service.generate_response(user_input)
-    meal_plan.response = "chocolate pudding 5 oz"
+    meal_plan.response = chatgpt_service.generate_response(user_input)
     meal_plan.save!
     # render json: { meal_plan: response }
   end
