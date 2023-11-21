@@ -32,6 +32,7 @@ module TaskSync
     config.api_only = true
     # Load environment variables from .env file
     Dotenv::Railtie.load
+    config.middleware.use Rack::Attack
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'  # Update this with the appropriate origin
