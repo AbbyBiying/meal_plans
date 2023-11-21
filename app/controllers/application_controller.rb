@@ -6,10 +6,8 @@ class ApplicationController < ActionController::API
 
   def authenticate_request
     @current_user = authorize_request
-    unless @current_user
-      render json: { error: 'Not authorized', redirect_url: signup_url }, status: :unauthorized
-    end
-  end   
+    render json: { error: 'Not authorized' }, status: :unauthorized unless @current_user
+  end
 
   def authorize_request
     JwtService.decode(http_auth_header)

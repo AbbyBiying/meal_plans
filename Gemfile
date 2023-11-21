@@ -8,6 +8,7 @@ gem 'httparty'
 gem 'jwt'
 
 gem 'rack-cors'
+gem 'rack-attack'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
