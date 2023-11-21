@@ -94,6 +94,8 @@ GEM
       railties (>= 3.2)
     drb (2.2.0)
       ruby2_keywords
+    email_validator (2.2.4)
+      activemodel
     error_highlight (0.5.1)
     erubi (1.12.0)
     globalid (1.2.1)
@@ -223,6 +225,7 @@ DEPENDENCIES
   bootsnap
   debug
   dotenv-rails
+  email_validator
   error_highlight (>= 0.4.0)
   httparty
   jwt
