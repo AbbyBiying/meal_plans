@@ -13,7 +13,14 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  
+  # Logging to Custom Log Files.
+  config.log_tags = [:request_id]
 
+  config.logger = ActiveSupport::Logger.new("log/development.log")
+  config.logger.formatter = proc do |severity, datetime, progname, msg|
+    "#{severity}: #{msg}\n, #{datetime}"
+  end
   # Enable server timing
   config.server_timing = true
 
