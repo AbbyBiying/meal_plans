@@ -4,6 +4,7 @@ ruby "3.1.2"
 gem 'bcrypt'
 gem 'email_validator'
 gem 'dotenv-rails'
+gem 'faker'
 gem 'httparty'
 gem 'jwt'
 
@@ -12,6 +13,7 @@ gem 'rack-attack'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
+gem 'redis'
 gem 'resque', '~> 2.6'
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
@@ -55,3 +57,12 @@ group :development do
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+group :test do
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
+  gem 'rack-test'
+  gem 'timecop'
+end

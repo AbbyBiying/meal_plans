@@ -10,7 +10,8 @@ class ApplicationController < ActionController::API
   end
 
   def authorize_request
-    JwtService.decode(http_auth_header)
+    user_id = JwtService.decode(http_auth_header)['user_id']
+    return User.find_by(id: user_id)
   end
 
   def http_auth_header

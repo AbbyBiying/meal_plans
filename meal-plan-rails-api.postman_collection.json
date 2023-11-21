@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "bd509ff4-4cbc-4b11-87e7-4a23119ebdeb",
+		"name": "meal-plan-rails-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31110612"
+	},
+	"item": [
+		{
+			"name": "LOCAL signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"user\": {\n    \"email\": \"sample46@example.com\",\n    \"password\": \"dddsdfw3fFDS\",\n    \"password_confirmation\": \"dddsdfw3fFDS\"\n} }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"email\": \"sample46@example.com\",\n    \"password\": \"dddsdfw3fFDS\"\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL meal_plans_1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNzAxNTAzNjAwfQ.KMjy3Y-NcCpG3NB2Ghe8gmBdVs7ZJJrrdlKPfnwQgJ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sample Meal Plan\",\n    \"preferences\": \"Balanced\",\n    \"goals\": \"Build Muscle\",\n    \"allergies\": \"1000\",\n    \"cuisines\": \"chinese\",\n    \"amounts\": \"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/meal_plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meal_plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL meal_plans_2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNzAxNTAzNjAwfQ.KMjy3Y-NcCpG3NB2Ghe8gmBdVs7ZJJrrdlKPfnwQgJ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sample Meal Plan\",\n    \"preferences\": \"Balanced\",\n    \"goals\": \"Build Muscle\",\n    \"allergies\": \"1000\",\n    \"cuisines\": \"chinese\",\n    \"amounts\": \"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/meal_plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meal_plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL get users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNzAxNTAzNjAwfQ.KMjy3Y-NcCpG3NB2Ghe8gmBdVs7ZJJrrdlKPfnwQgJ4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sample Meal Plan\",\n    \"preferences\": \"Balanced\",\n    \"goals\": \"Build Muscle\",\n    \"allergies\": \"1000\",\n    \"cuisines\": \"chinese\",\n    \"amounts\": \"3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/meal_plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meal_plans"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
