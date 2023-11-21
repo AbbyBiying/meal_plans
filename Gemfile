@@ -1,12 +1,10 @@
 source "https://rubygems.org"
 
 ruby "3.1.2"
-<<<<<<< HEAD
-=======
 gem 'bcrypt'
 gem 'email_validator'
->>>>>>> 1e3209d... add logger
 gem 'dotenv-rails'
+gem 'jwt'
 gem 'httparty'
 gem 'rack-cors'
 
