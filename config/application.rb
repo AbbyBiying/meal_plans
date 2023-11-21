@@ -10,6 +10,8 @@ Bundler.require(*Rails.groups)
 
 module TaskSync
   class Application < Rails::Application
+    config.middleware.use Rack::Attack
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -32,7 +34,8 @@ module TaskSync
     config.api_only = true
     # Load environment variables from .env file
     Dotenv::Railtie.load
-    config.middleware.use Rack::Attack
+
+    
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'  # Update this with the appropriate origin

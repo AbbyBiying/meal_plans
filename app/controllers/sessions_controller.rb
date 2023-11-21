@@ -12,10 +12,7 @@ class SessionsController < ApplicationController
       render_error('Invalid email or password', :unauthorized)
     end
   end
-
-  def destroy
-    head :no_content
-  end 
+  
   
   private
 

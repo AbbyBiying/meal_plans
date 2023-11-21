@@ -1,25 +1,75 @@
-# README
+# Meal Planner API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Meal Planner is a Ruby on Rails API that empowers users to create personalized meal plans based on their dietary preferences. The app utilizes the ChatGPT API for generating meal recommendations and employs rate limiting with Rack::Attack to ensure fair API usage. Background job processing is handled by Resque, and Puma serves as the application server.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+Make sure you have the following software installed on your system:
 
-* System dependencies
+- Ruby 3.1.2p20
+- Rails 7.1.2
+- SQLite3
+- Redis
+- [Puma](https://github.com/puma/puma)
+- [Ruby Redis Client](https://github.com/redis/redis-rb)
+- [Resque](https://github.com/resque/resque)
 
-* Configuration
+## Getting Started
 
-* Database creation
+1. Clone the repository:
 
-* Database initialization
+   ```bash
+   git clone https://github.com/AbbyBiying/meal_plans.git
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## API Usage Examples
+   ### create a new user
+   ```bash
+   curl -X POST \
+   http://localhost:3000/signup \
+   -H 'Content-Type: application/json' \
+   -d '{
+      "user": {
+         "email": "sample_user_email@example.com",
+         "password": "sample_password",
+         "password_confirmation": "sample_password"
+      }
+   }'
+   ```
+   ### login
+   ```bash
+   curl -X POST \
+   http://localhost:3000/login \
+   -H 'Content-Type: application/json' \
+   -H 'Accept: application/json' \
+   -d '{"email": "sample46@example.com", "password": "dddsdfw3fFDS"}'
+   ```
 
-* Deployment instructions
+   ### set meal plans dietary preferences
+   ```bash
+   curl -X POST \
+   http://localhost:3000/users/13/meal_plans \
+   -H 'Content-Type: application/json' \
+   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxNzYzNzc3fQ.CAr4SCFAx4oYzyr5XQY7R9ton_p_PGl2onWv90shY0E" \
+   -d '{
+     "meal_plan": {
+        "name": "Sample Meal Plan",
+        "preferences": "Balanced",
+        "goals": "Build Muscle",
+        "allergies": "1000",
+        "cuisines": "chinese",
+        "amounts": "5"
+     }
+   }'   
+   ```
+   
+   ### admin can see all users
+   ```bash
+   curl -X GET \
+   http://localhost:3000/users \
+   -H 'Content-Type: application/json' \
+   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxODQ3NjQyfQ.n5XCSgTIB2eS3lr3kNxEmTkXh_RLdmIWL2NYuh1i9Og'
 
-* ...
-# meal_plans
+
+
+ 

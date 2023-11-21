@@ -1,21 +1,19 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :meal_plans
 
-  # Validations
-  validates :email, presence: true, uniqueness: true, email: true
-  validates :password, presence: true, length: { minimum: 6 }, if: -> { new_record? || !password.nil? }
-
-  # Callbacks
-  before_save :transform_email
-
-  def decoded_email
-    URI.decode_www_form_component(email)
-  end
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, email: true
+  validates :password, presence: true, length: { minimum: 6 }
   
-  private
+  enum role: { regular: 0, admin: 1 }
 
-  def transform_email
-    # Downcase and encode the email before saving
-    self.email = URI.encode_www_form_component(email.downcase)
+  def get_meal_plans
+    self.meal_plans
+  end
+
+  def make_admin!
+    update(role: :admin)
+  rescue ActiveRecord::RecordInvalid => e
+    log_error('make_admin failed!')
   end
 end
