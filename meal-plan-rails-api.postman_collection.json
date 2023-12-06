@@ -91,7 +91,7 @@
 			"response": []
 		},
 		{
-			"name": "LOCAL meal_plans_1",
+			"name": "LOCAL meal_plans",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -107,13 +107,13 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNzAxNTAzNjAwfQ.KMjy3Y-NcCpG3NB2Ghe8gmBdVs7ZJJrrdlKPfnwQgJ4",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxODQ3NjQyfQ.n5XCSgTIB2eS3lr3kNxEmTkXh_RLdmIWL2NYuh1i9Og",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Sample Meal Plan\",\n    \"preferences\": \"Balanced\",\n    \"goals\": \"Build Muscle\",\n    \"allergies\": \"1000\",\n    \"cuisines\": \"chinese\",\n    \"amounts\": \"3\"\n}",
+					"raw": "{\n    \"meal_plan\": {\n        \"name\": \"Sample Meal Plan\",\n        \"preferences\": \"Balanced\",\n        \"goals\": \"Build Muscle\",\n        \"allergies\": \"1000\",\n        \"cuisines\": \"chinese\",\n        \"amounts\": \"5\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,57 +121,18 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/meal_plans",
+					"raw": "http://127.0.0.1:3000/users/13/meal_plans",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "3000",
 					"path": [
-						"meal_plans"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "LOCAL meal_plans_2",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNzAxNTAzNjAwfQ.KMjy3Y-NcCpG3NB2Ghe8gmBdVs7ZJJrrdlKPfnwQgJ4",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Sample Meal Plan\",\n    \"preferences\": \"Balanced\",\n    \"goals\": \"Build Muscle\",\n    \"allergies\": \"1000\",\n    \"cuisines\": \"chinese\",\n    \"amounts\": \"3\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/meal_plans",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
+						"users",
+						"13",
 						"meal_plans"
 					]
 				}
@@ -180,8 +141,11 @@
 		},
 		{
 			"name": "LOCAL get users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -195,7 +159,54 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNzAxNTAzNjAwfQ.KMjy3Y-NcCpG3NB2Ghe8gmBdVs7ZJJrrdlKPfnwQgJ4",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxODQ3NjQyfQ.n5XCSgTIB2eS3lr3kNxEmTkXh_RLdmIWL2NYuh1i9Og",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL show user meal plan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxODQ3NjQyfQ.n5XCSgTIB2eS3lr3kNxEmTkXh_RLdmIWL2NYuh1i9Og",
 						"type": "text"
 					}
 				],
@@ -209,13 +220,18 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/meal_plans",
+					"raw": "http://127.0.0.1:3000/users/13/meal_plans",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "3000",
 					"path": [
+						"users",
+						"13",
 						"meal_plans"
 					]
 				}

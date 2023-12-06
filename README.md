@@ -44,6 +44,7 @@ Make sure you have the following software installed on your system:
    -H 'Accept: application/json' \
    -d '{"email": "sample46@example.com", "password": "dddsdfw3fFDS"}'
    ```
+<<<<<<< HEAD
    ### set meal plans dietary preferences
    ```bash
    curl -X POST \
@@ -61,4 +62,34 @@ Make sure you have the following software installed on your system:
     }
 }'
 
+=======
+
+   ### set meal plans dietary preferences
+   ```bash
+   curl -X POST \
+   http://localhost:3000/users/13/meal_plans \
+   -H 'Content-Type: application/json' \
+   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxNzYzNzc3fQ.CAr4SCFAx4oYzyr5XQY7R9ton_p_PGl2onWv90shY0E" \
+   -d '{
+     "meal_plan": {
+        "name": "Sample Meal Plan",
+        "preferences": "Balanced",
+        "goals": "Build Muscle",
+        "allergies": "1000",
+        "cuisines": "chinese",
+        "amounts": "5"
+     }
+   }'   
+   ```
+   
+   ### admin can see all users
+   ```bash
+   curl -X GET \
+   http://localhost:3000/users \
+   -H 'Content-Type: application/json' \
+   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxODQ3NjQyfQ.n5XCSgTIB2eS3lr3kNxEmTkXh_RLdmIWL2NYuh1i9Og'
+
+
+
+>>>>>>> fb3bec0434f682aa980772ad267044e1a12f6334
  

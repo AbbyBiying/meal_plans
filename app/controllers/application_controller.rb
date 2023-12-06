@@ -7,10 +7,15 @@ class ApplicationController < ActionController::API
   def authenticate_request
     @current_user = authorize_request
     render json: { error: 'Not authorized' }, status: :unauthorized unless @current_user
+  rescue JWT::DecodeError => e
+    render json: { error: "Invalid token: #{e.message}" }, status: :unauthorized
   end
 
   def authorize_request
-    user_id = JwtService.decode(http_auth_header)['user_id']
+    jwt = JwtService.decode(http_auth_header)
+    return nil unless jwt # Return nil if the JWT is nil
+  
+    user_id = jwt['user_id']
     return User.find_by(id: user_id)
   end
 
