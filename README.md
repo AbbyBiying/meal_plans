@@ -44,25 +44,6 @@ Make sure you have the following software installed on your system:
    -H 'Accept: application/json' \
    -d '{"email": "sample46@example.com", "password": "dddsdfw3fFDS"}'
    ```
-<<<<<<< HEAD
-   ### set meal plans dietary preferences
-   ```bash
-   curl -X POST \
-   http://localhost:3000/users/13/meal_plans \
-   -H 'Content-Type: application/json' \
-   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxNzYzNzc3fQ.CAr4SCFAx4oYzyr5XQY7R9ton_p_PGl2onWv90shY0E" \
-   -d '{
-    "meal_plan": {
-        "name": "Sample Meal Plan",
-        "preferences": "Balanced",
-        "goals": "Build Muscle",
-        "allergies": "1000",
-        "cuisines": "chinese",
-        "amounts": "5"
-    }
-}'
-
-=======
 
    ### set meal plans dietary preferences
    ```bash
@@ -91,5 +72,4 @@ Make sure you have the following software installed on your system:
 
 
 
->>>>>>> fb3bec0434f682aa980772ad267044e1a12f6334
  
