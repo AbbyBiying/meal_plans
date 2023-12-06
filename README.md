@@ -17,10 +17,20 @@ Make sure you have the following software installed on your system:
 ## Getting Started
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/AbbyBiying/meal_plans.git
 
+2. Install dependencies:
+   ```bash
+   bundle install
+
+3. Set up the database:
+   ```bash
+   rails db:create db:migrate
+
+4. Start the server:
+   ```bash
+   rails server
 
 ## API Usage Examples
    ### create a new user
@@ -50,25 +60,26 @@ Make sure you have the following software installed on your system:
    curl -X POST \
    http://localhost:3000/users/13/meal_plans \
    -H 'Content-Type: application/json' \
-   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxNzYzNzc3fQ.CAr4SCFAx4oYzyr5XQY7R9ton_p_PGl2onWv90shY0E" \
+   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
    -d '{
-     "meal_plan": {
-        "name": "Sample Meal Plan",
-        "preferences": "Balanced",
-        "goals": "Build Muscle",
-        "allergies": "1000",
-        "cuisines": "chinese",
-        "amounts": "5"
-     }
-   }'   
+   "meal_plan": {
+      "name": "Sample Meal Plan",
+      "preferences": "Balanced",
+      "goals": "Build Muscle",
+      "allergies": "1000",
+      "cuisines": "chinese",
+      "amounts": "5"
+   }
+   }'
+
    ```
    
-   ### admin can see all users
+   ### only admin can see all users
    ```bash
    curl -X GET \
    http://localhost:3000/users \
    -H 'Content-Type: application/json' \
-   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNzAxODQ3NjQyfQ.n5XCSgTIB2eS3lr3kNxEmTkXh_RLdmIWL2NYuh1i9Og'
+   -H 'Authorization: Bearer YOUR_ADMIN_ACCESS_TOKEN'
 
 
 
